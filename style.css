@@ -80,13 +80,15 @@ html {
 
 .days {
   width: 100%;
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   padding: 0.2rem;
+  /* background-color: #2295b4; */
   /* font-weight: 600; */
 }
 
-.days div {
+.days div{
   font-size: 1.4rem;
   margin: 0.3rem;
   width: calc(40.2rem / 7);
@@ -111,4 +113,16 @@ html {
 
 .today {
   background-color: #2295b4;
+}
+
+.ndays {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  /* background-color: #fff; */
+}
+.edays {
+  /* background-color: red; */
+  /* font-size: 1.4em; */
+  
 }

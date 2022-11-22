@@ -7,15 +7,15 @@ const renderCalendar = () => {
   date.setDate(1); // setDate(1) means gives the first day number of the month; value can be 0, 32 etc
 
 
-  const monthDays = document.querySelector(".days");
-
+  const Days = document.querySelector(".days");
+  const ndays = document.querySelector(".ndays")
 
   // getMonth, 0 ===> previous month last day
   // getMonth, 1 ===> current month first day
 
 
 
-   //============ current month last day===========//
+  //============ current month last day===========//
   const lastDay = new Date(
     date.getFullYear(), 
     date.getMonth() + 1, 
@@ -87,7 +87,7 @@ const renderCalendar = () => {
     days += `<div class="next-date">${j}</div>`;
   }
 
-  monthDays.innerHTML = days;
+  Days.innerHTML = days;
 
 
 };
