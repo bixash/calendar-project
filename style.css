@@ -12,7 +12,7 @@ html {
 .container {
   width: 100%;
   height: 100vh;
-  background-color: #12121f;
+  /* background-color: #363639; */
   color: #eee;
   display: flex;
   justify-content: center;
@@ -22,7 +22,8 @@ html {
 .calendar {
   width: 45rem;
   height: 52rem;
-  background-color: #222227;
+  margin: 20em auto;
+  /* background-color: #222227; */
   box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
 }
 
@@ -52,6 +53,7 @@ html {
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   margin-bottom: 1rem;
+  color: white;
 }
 
 .month p {
@@ -64,6 +66,7 @@ html {
   padding: 0 0.4rem;
   display: flex;
   align-items: center;
+  color:#2295b4;
   
 }
 
@@ -80,10 +83,11 @@ html {
 
 .days {
   width: 100%;
-  position: relative;
+  /* position: relative; */
   display: flex;
   flex-wrap: wrap;
   padding: 0.2rem;
+  color:#2295b4;
   /* background-color: #2295b4; */
   /* font-weight: 600; */
 }
@@ -100,9 +104,9 @@ html {
   transition: background-color 0.2s;
 }
 
-.days div:hover:not(.today) {
-  background-color: #262626;
-  border: 0.1em solid #777;
+.edays:hover:not(.today) {
+  background-color: #2295b4;
+  color: white;
   cursor: pointer;
 }
 
@@ -112,17 +116,39 @@ html {
 }
 
 .today {
+  position: relative;
   background-color: #2295b4;
+  color: white;
 }
 
-.ndays {
+.edays{
+  /* color : white; */
+  position: relative;
+}
+.edays .ndays, .today .ndays{
   position: absolute;
-  top: 0px;
-  right: 0px;
-  /* background-color: #fff; */
+  bottom: 0;
+  right: 0;
+  color: rgb(171, 192, 255);
+  font-size: 12px;
+  height: fit-content;
+  /* margin: 1.5em  1.5em 0 0; */
+  width: fit-content;
+
 }
-.edays {
-  /* background-color: red; */
-  /* font-size: 1.4em; */
-  
+
+@media (max-width: 700px) {
+
+  .calendar {
+    width: 100%;
+    height: 52rem;
+    margin: 100em;
+    /* background-color: #222227; */
+    box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
+  }
+
+
 }
+
+
+

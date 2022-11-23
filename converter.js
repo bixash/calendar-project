@@ -108,14 +108,20 @@ function updateClock() {
         const day = currentDate.getDate();
         const dateString = (convertEnglishDateToNepali(year, month, day));
 
-        setDataToID('DATE_IN_ENGLISH', dateString[0]);
+        // setDataToID('ndays', dateString[0]);
+
+        document.querySelector('.ndays').innerHTML = dateString[0];
+        console.log(dateString[0]);
+      
         // setDataToID('DATE_IN_NEPALI', localizeNumber(dateString[1]));
 
         console.log("Date Changed " + dateString);
     }
     previousDate = currentDate;
-    setTimeout(updateClock, 1000);
+    // setTimeout(updateClock, 1000);
 }
+
+
 
 function setDataToID(id, data) {
     try {
@@ -392,8 +398,10 @@ function convertEnglishDateToNepali(yy, mm, dd) {
 
 
     const dateString = [];
-    dateString[0] = y + " " + getEnglishMonth(m) + " " + total_nDays + ", " + getEnglishDayOfWeekInString(day);
-    dateString[1] = y + " " + getNepaliMonthInString(m) + " " + total_nDays + ", " + getNepaliDayOfWeekInString(day);
+    //dateString[1] = y + " " + getEnglishMonth(m) + " " + total_nDays + ", " + getEnglishDayOfWeekInString(day);
+    //dateString[1] = y + " " + getNepaliMonthInString(m) + " " + total_nDays + ", " + getNepaliDayOfWeekInString(day);
+    dateString[0] = total_nDays;
+    // dateString[1] = getEnglishMonth(m);
     return dateString;
 
 }

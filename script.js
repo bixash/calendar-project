@@ -1,14 +1,24 @@
+
+// import NepaliDate from 'https://cdn.jsdelivr.net/npm/nepali-date-converter/dist/nepali-date-converter.es5.js'
+// updateClock();
+
+
+
+
 const date = new Date();
 
 
-//console.log(date);
+const mo = date.getMonth() + 1;
+const yr = date.getFullYear();
+console.log()
+let dy;
 
 const renderCalendar = () => {
   date.setDate(1); // setDate(1) means gives the first day number of the month; value can be 0, 32 etc
 
 
-  const Days = document.querySelector(".days");
-  const ndays = document.querySelector(".ndays")
+  const monthDays = document.querySelector(".days");
+  // const ndays = document.querySelector("#ndays")
 
   // getMonth, 0 ===> previous month last day
   // getMonth, 1 ===> current month first day
@@ -67,7 +77,7 @@ const renderCalendar = () => {
   document.querySelector(".date p").innerHTML = new Date().getFullYear();   //changed from toDateString()
 
   let days = "";
-
+  let nepalidate =" ";
   //===loop to generate previous month end days upto first day of current month=====//
   for (let x = firstDayIndex; x > 0; x--) {
     days += `<div class="prev-date">${prevLastDay - x + 1}</div>`;
@@ -75,10 +85,15 @@ const renderCalendar = () => {
 
 //===loop to generate days upto current month last day date=====//
   for (let i = 1; i <= lastDay; i++) {
+    dy = i;
+
+    nepalidate = convertEnglishDateToNepali(yr, mo, dy);
+    console.log(nepalidate);
+    
     if (i === new Date().getDate() && date.getMonth() === new Date().getMonth()) {
-      days += `<div class="today">${i}</div>`;
+      days += `<div class="today">${i}<div class ="ndays">${nepalidate}</div></div>`;
     } else {
-      days += `<div>${i}</div>`;
+      days += `<div class="edays" >${i}<div class ="ndays">${nepalidate}</div></div>`;
     }
   }
 
@@ -87,7 +102,7 @@ const renderCalendar = () => {
     days += `<div class="next-date">${j}</div>`;
   }
 
-  Days.innerHTML = days;
+  monthDays.innerHTML = days;
 
 
 };
