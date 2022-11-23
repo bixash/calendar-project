@@ -138,7 +138,8 @@ html {
   position: absolute;
   bottom: 2px;
   right: 3px;
-  color: rgb(171, 192, 255);
+  color: #2294b4b7;
+  /* opacity: 0.5; */
   font-size: 12px;
   height: fit-content;
   /* margin: 1.5em  1.5em 0 0; */
