@@ -398,7 +398,7 @@ function convertEnglishDateToNepali(yy, mm, dd) {
 
 
     const dateString = [];
-    //dateString[1] = y + " " + getEnglishMonth(m) + " " + total_nDays + ", " + getEnglishDayOfWeekInString(day);
+    dateString[1] = y + " " + getEnglishMonth(m) + " " + total_nDays + ", " + getEnglishDayOfWeekInString(day);
     //dateString[1] = y + " " + getNepaliMonthInString(m) + " " + total_nDays + ", " + getNepaliDayOfWeekInString(day);
     dateString[0] = total_nDays;
     // dateString[1] = getEnglishMonth(m);
